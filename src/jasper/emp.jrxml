@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="emp" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" >
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="emp" class="entity.Emp"/>
+	<field name="enameTitle" class="java.lang.String"/>
+	<field name="salTitle" class="java.lang.String"/>
+	<field name="jobTitle" class="java.lang.String"/>
+	<field name="dnameTitle" class="java.lang.String"/>
+	<field name="ename" class="java.lang.String"/>
+	<field name="sal" class="java.lang.Integer"/>
+	<field name="job" class="java.lang.String"/>
+	<field name="dept" class="entity.Dept"/>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement  x="309" y="0" width="100" height="20"/>
+				<textElement>
+					<font fontName="宋体" isBold="true" isItalic="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{emp}.getJobTitle()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="455" y="0" width="100" height="20"/>
+				<textElement>
+					<font fontName="宋体" isBold="true" isItalic="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{emp}.getDnameTitle()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="152" y="0" width="100" height="20"/>
+				<textElement>
+					<font fontName="宋体" isBold="true" isItalic="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{emp}.getEnameTitle()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="0" y="0" width="100" height="20"/>
+				<textElement>
+					<font fontName="宋体" isBold="true" isItalic="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{emp}.getSalTitle()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement  x="152" y="0" width="138" height="20"/>
+				<textElement>
+					<font fontName="宋体" isBold="true" isItalic="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ename}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="0" y="0" width="138" height="20"/>
+				<textElement>
+					<font fontName="宋体" isBold="true" isItalic="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="309" y="0" width="138" height="20"/>
+				<textElement>
+					<font fontName="宋体" isBold="true" isItalic="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="447" y="0" width="138" height="20"/>
+				<textElement>
+					<font fontName="宋体" isBold="true" isItalic="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dept}.getDanme()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
