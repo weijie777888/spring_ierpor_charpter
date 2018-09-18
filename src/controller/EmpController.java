@@ -17,20 +17,21 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 @RequestMapping("/test.action")
 public class EmpController {
 
+	
 	@RequestMapping(params="method=print")
 	public ModelAndView printReport() {
 		ModelAndView model=new ModelAndView();
 		Emp emp=new Emp();
 		Emp emp2=new Emp();
 		
-		emp.setDept(new Dept("¾ŞÍ·"));
-		emp.setEname("ÂíÔÆ");
-		emp.setJob("°¢Àï°Í°Í");
+		emp.setDept(new Dept("å·¨å¤´"));
+		emp.setEname("é©¬äº‘");
+		emp.setJob("é˜¿é‡Œå·´å·´");
 		emp.setSal(1000);
 		
-		emp2.setDept(new Dept("¾ŞÍ·1"));
-		emp2.setEname("Âí»¯ÌÚ");
-		emp2.setJob("ÌÚÑ¶");
+		emp2.setDept(new Dept("å·¨å¤´1"));
+		emp2.setEname("é©¬åŒ–è…¾");
+		emp2.setJob("è…¾è®¯");
 		emp2.setSal(2000);
 		
 		List<Emp> emps=new ArrayList<Emp>();
@@ -42,12 +43,12 @@ public class EmpController {
 		
 		Map<String, Object> map=new HashMap<>();
 		
-		//ÕâÀïÊÇÉèÖÃ±¨±íµÄ²ÎÊı ±ØĞëºÍJRXML ÖĞµÄparameter name Ò»ÖÂ		
+		//è¿™é‡Œæ˜¯è®¾ç½®æŠ¥è¡¨çš„å‚æ•° å¿…é¡»å’ŒJRXML ä¸­çš„parameter name ä¸€è‡´11111111111111111111111111111		
 		map.put("emp", new Emp());
 		
-		//°ó¶¨µ½SpringÈİÆ÷ÖĞµÄbean
+		//ç»‘å®šåˆ°Springå®¹å™¨ä¸­çš„bean
 		map.put("datasource", beanCollectionDataSource);
-		//ÕâÀïÉèÖÃµÄ¾ÍÊÇSpringÈİÆ÷ÖĞ¶ÔÓ¦×é¼şÃû±ÈÈçÎÒÒª´òÓ¡PDF
+		//è¿™é‡Œè®¾ç½®çš„å°±æ˜¯Springå®¹å™¨ä¸­å¯¹åº”ç»„ä»¶åæ¯”å¦‚æˆ‘è¦æ‰“å°PDF
 		model.setViewName("pdfReport");
 		
 		model.addAllObjects(map);
